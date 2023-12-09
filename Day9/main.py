@@ -13,7 +13,7 @@ def extrapolated_values(values, backwards):
     if all(element == 0 for element in values):
         return 0
     new_values = [values[i+1]-values[i] for i in range(len(values)-1)]
-    if backwards: new_values[0] - extrapolated_values(new_values, True)
+    if backwards: return new_values[0] - extrapolated_values(new_values, True)
     else: return new_values[-1] + extrapolated_values(new_values, False)
 
 part1, part2 = 0, 0
